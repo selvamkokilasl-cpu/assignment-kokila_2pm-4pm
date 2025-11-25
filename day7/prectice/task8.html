@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        /* Attribute selector for product images */
+        img[alt="product-image"] {
+            width: 100%;
+            border: 2px solid #555;
+            border-radius: 5px;
+        }
+
+        /* Attribute selector for buy buttons */
+        button[type="buy"] {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Attribute selector for add-to-cart buttons */
+        button[type="cart"] {
+            background-color: orange;
+            color: black;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+    </style>
+
+</head>
+<body>
+
+     <h2>Product List</h2>
+
+    <div class="product">
+        <img src="c:\Users\BEST SOLUTION\Pictures\kokila.jpg.jpeg" alt="product-image">
+        <h3>Product 1</h3>
+        <p>Price: ₹500</p>
+        <button type="buy">Buy Now</button>
+        <button type="cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="c:\Users\BEST SOLUTION\Pictures\kokila.jpg.jpeg"product-image">
+        <h3>Product 2</h3>
+        <p>price: ₹500</p>
+        <button type="buy">Buy Now</button>
+        <button type="cart">Add to Cart</button>
+    </div>
+
+</body>
+</html>
