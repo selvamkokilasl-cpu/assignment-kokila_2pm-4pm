@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.prices {
+  display: flex;
+  gap: 20px;
+}
+.price {
+  flex: 1;
+  background: blueviolet;
+  padding: 20px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .prices {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+    <section class="prices">
+  <div class="price">Free</div>
+  <div class="price">Standard</div>
+  <div class="price">Premium</div>
+</section>
+    
+</body>
+</html>
