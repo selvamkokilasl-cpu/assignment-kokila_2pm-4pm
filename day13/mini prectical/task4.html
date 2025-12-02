@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 120px 1fr;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar stats"
+    "sidebar content";
+  height: 100px;
+  gap: 12px;
+  margin: 10px;
+  padding: 10px;
+  border: blueviolet;
+  background-color: brown;
+  
+}
+.sidebar { grid-area: sidebar; }
+.topbar  { grid-area: topbar; }
+.stats   { grid-area: stats; }
+.content { grid-area: content; }
+</style>
+
+</head>
+<body>
+    <div class="dashboard">
+  <aside class="sidebar">Sidebar</aside>
+  <header class="topbar">Topbar</header>
+  <section class="stats">Stats</section>
+  <main class="content">Main Content</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add grild</title>
+    <style>
+    .box1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: aqua;
+    }
+
+.box2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background-color: blueviolet;
+}
+.big {
+  grid-column: span 2;
+  background: lightblue;
+}
+</style>
+
+
+</head>
+<body>
+    <div class="box1">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+<div class="box2">
+  <div class="big">Full width</div>
+  <div>Item B</div>
+  <div>Item C</div>
+</div>
+    
+</body>
+</html>

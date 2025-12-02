@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid </title>
+
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+body{
+  background: #e8f9ff;
+  padding: 25px;
+}
+
+
+
+
+.timetable {
+  margin-top: 30px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: center;
+}
+
+.timetable div {
+  border: 1px solid #333;
+  padding: 12px;
+  font-weight: bold;
+  background: #f6f6f6;
+}
+
+.timetable .header {
+  background: #ffe15d;
+}
+
+</style>
+</head>
+
+<body>
+
+
+  
+  <h2 style="margin: 20px 0;">⏰ Time Table — (CSS Grid)</h2>
+
+  <div class="timetable">
+    <div class="header">Day</div>
+    <div class="header">9–10 AM</div>
+    <div class="header">10–11 AM</div>
+    <div class="header">11–12 PM</div>
+    <div class="header">12–1 PM</div>
+    <div class="header">1–2 PM</div>
+
+    <div>Monday</div> 
+      <div>Maths</div> 
+      <div>English</div> 
+      <div>Computer</div>
+       <div>Break</div>
+        <div>Science</div>
+    <div>Tuesday</div> 
+     <div>Science</div>
+     <div>Sports</div> 
+     <div>Tamil</div>   
+      <div>Break</div> 
+      <div>Maths</div>
+    <div>Wednesday</div>
+    <div>Computer</div>
+    <div>Library</div>
+    <div>English</div> 
+    <div>Break</div> 
+    <div>Tamil</div>
+  </div>
+
+</div>
+</body>
+</html>
