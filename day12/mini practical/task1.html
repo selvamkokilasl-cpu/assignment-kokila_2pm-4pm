@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.pricing {
+  display: flex;
+  gap: 20px;
+}
+.price-card {
+  flex: 1;
+  padding: 25px;
+  background: #fafafa;
+  text-align: center;
+  border-radius: 10px;
+}
+@media(max-width: 700px) {
+  .pricing {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="pricing">
+  <div class="price-card">
+    <h3>html</h3>
+    <p>10000/month</p>
+    <button>Buy Now</button>
+  </div>
+  <div class="price-card">
+    <h3>Pro</h3>
+    <p>1000/month</p>
+    <button>Buy Now</button>
+  </div>
+  <div class="price-card">
+    <h3>Premium</h3>
+    <p>120000/month</p>
+    <button>Buy Now</button>
+  </div>
+</div>
+</body>
+</html>
