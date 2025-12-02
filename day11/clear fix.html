@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clearfix</title>
+    <style>
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class=".clearfix::after">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aperiam dignissimos ullam nesciunt cum molestias eius deleniti ex quis ducimus praesentium, dolore recusandae voluptatem tempore voluptatibus mollitia. Suscipit, impedit nihil.</p>
+    </div>
+    
+</body>
+</html>
