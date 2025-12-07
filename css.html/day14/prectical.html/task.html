@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.hero {
+  background: url("https://via.placeholder.com/1200x600") center/cover;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+  color: white;
+}
+.hero h1 { font-size: 45px; }
+.hero p { font-size: 20px; margin: 10px 0; }
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  background: #ff9100;
+  color: white;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+    <div class="hero">
+  <h1>Grow Your Skills</h1>
+  <p>Learn Responsive Design Easily</p>
+  <button>Get Started</button>
+</div>
+    
+</body>
+</html>
