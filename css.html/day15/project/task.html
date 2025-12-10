@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Project Integration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header class="header">
+        <div class="logo">MyWebsite</div>
+
+        <nav class="navbar" id="navMenu">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
+
+    
+    <section class="hero">
+        <h1>Welcome to My Responsive Website</h1>
+        <p>Building modern, mobile-friendly interfaces.</p>
+        <button class="hero-btn">Get Started</button>
+    </section>
+
+    
+    <section class="services">
+        <h2>Our Services</h2>
+
+        <div class="service-grid">
+            <div class="card">
+                <h3>Web Design</h3>
+                <p>Create clean and modern UI designs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Development</h3>
+                <p>Fast and scalable web applications.</p>
+            </div>
+
+            <div class="card">
+                <h3>SEO</h3>
+                <p>Grow your business online.</p>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="gallery">
+        <h2>Gallery</h2>
+
+        <div class="gallery-grid">
+            <img src="https://picsum.photos/300/200" alt="">
+            <img src="https://picsum.photos/301/200" alt="">
+            <img src="https://picsum.photos/302/200" alt="">
+            <img src="https://picsum.photos/303/200" alt="">
+            <img src="https://picsum.photos/304/200" alt="">
+            <img src="https://picsum.photos/305/200" alt="">
+        </div>
+    </section>
+
+   
+    <section class="pricing">
+        <h2>Pricing</h2>
+
+        <div class="price-table">
+            <div class="price-card">
+                <h3>Basic</h3>
+                
+                <button>Choose Plan</button>
+            </div>
+
+            <div class="price-card">
+                <h3>Standard</h3>
+               
+                <button>Choose Plan</button>
+            </div>
+
+            <div class="price-card">
+                <h3>Premium</h3>
+                
+                <button>Choose Plan</button>
+            </div>
+        </div>
+    </section>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

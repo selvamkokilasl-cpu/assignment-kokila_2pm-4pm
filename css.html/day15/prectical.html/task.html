@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All-In-One Responsive Website</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
+nav ul { display: flex; gap: 25px; list-style: none; }
+
+
+.hero {
+  height: 85vh;
+  background: url("https://picsum.photos/1200/800") center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.hero h1 { font-size: 60px; }
+.hero p { font-size: 20px; margin: 15px 0; }
+.hero button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background: #ff6600;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+
+.services {
+  padding: 60px;
+  background: #f8f8f8;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.service-box {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+.service-box h2 { margin-bottom: 10px; }
+
+
+.pricing {
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.price-box {
+  width: 320px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  border: 2px solid #0099ff;
+  text-align: center;
+}
+.price {
+  font-size: 42px;
+  color: #0099ff;
+  margin: 15px 0;
+}
+.price-box button {
+  padding: 12px 25px;
+  border: none;
+  background: #0099ff;
+  color: white;
+  font-size: 17px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.gallery {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+
+.projects {
+  padding: 60px;
+  background: #fafafa;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.projects div {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+
+footer {
+  padding: 30px;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+
+
+@media (max-width: 900px) {
+  .services { grid-template-columns: 1fr 1fr; }
+  .projects { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+  .hero h1 { font-size: 45px; }
+}
+
+@media (max-width: 768px) {
+  nav ul { display: none; } /* (Optional: hamburger can be added later) */
+  .services { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 36px; }
+}
+
+@media (max-width: 500px) {
+  .gallery { grid-template-columns: 1fr; }
+  .projects { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 30px; }
+  .hero p { font-size: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>My Website</h2>
+  <nav>
+    <ul><li>Home</li><li>Services</li><li>Gallery</li><li>Contact</li></ul>
+  </nav>
+</header>
+
+
+<section class="hero">
+  <div>
+    <h1>Build Your Future Today</h1>
+    <p>Responsive & Modern Web Design</p>
+    <button>Get Started</button>
+  </div>
+</section>
+
+
+<section class="services">
+  <div class="service-box"><h2>Web Design</h2><p>Modern UI designs</p></div>
+  <div class="service-box"><h2>Development</h2><p>Fast & scalable</p></div>
+  <div class="service-box"><h2>Branding</h2><p>Grow your business</p></div>
+</section>
+
+
+<section class="pricing">
+  <div class="price-box">
+    <h3>Starter</h3>
+    <div class="price">$19/mo</div>
+    <p>Basic features</p>
+    <button>Choose Plan</button>
+  </div>
+  <div class="price-box">
+    <h3>Professional</h3>
+    <div class="price">$49/mo</div>
+    <p>Premium features</p>
+    <button>Choose Plan</button>
+  </div>
+  <div class="price-box">
+    <h3>Enterprise</h3>
+    <div class="price">$99/mo</div>
+    <p>Business suite</p>
+    <button>Choose Plan</button>
+  </div>
+</section>
+
+
+<section class="gallery">
+  <img src="https://picsum.photos/300?1">
+  <img src="https://picsum.photos/300?2">
+  <img src="https://picsum.photos/300?3">
+  <img src="https://picsum.photos/300?4">
+  <img src="https://picsum.photos/300?5">
+  <img src="https://picsum.photos/300?6">
+  <img src="https://picsum.photos/300?7">
+  <img src="https://picsum.photos/300?8">
+</section>
+
+
+<section class="projects">
+  <div>Portfolio Project 1</div>
+  <div>Portfolio Project 2</div>
+  <div>Portfolio Project 3</div>
+  <div>Portfolio Project 4</div>
+  <div>Portfolio Project 5</div>
+  <div>Portfolio Project 6</div>
+</section>
+
+<footer>
+  © 2025 All-In-One Website — Built for Practice & Learning
+</footer>
+
+</body>
+</html>
