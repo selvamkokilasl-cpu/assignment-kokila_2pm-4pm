@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    ul {
+      list-style: square;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Products</h2>
+
+  <h3>All Products</h3>
+  <ul id="allProducts"></ul>
+
+  <h3>Products Below ₹500</h3>
+  <ul id="cheapProducts"></ul>
+
+  <h3>Total Price</h3>
+  <p id="totalPrice"></p>
+
+  <script>
+    // 🔹 Step 1: Create array of products
+    const products = [
+      { name: "Pen", price: 20 },
+      { name: "Notebook", price: 150 },
+      { name: "Bag", price: 1200 },
+      { name: "Mouse", price: 450 },
+      { name: "Keyboard", price: 700 }
+    ];
+
+    // 🔹 Step 2: forEach() – display all products
+    const allList = document.getElementById("allProducts");
+
+    products.forEach(product => {
+      const li = document.createElement("li");
+      li.textContent = `${product.name} - ₹${product.price}`;
+      allList.appendChild(li);
+    });
+
+    // 🔹 Step 3: filter() – price < 500
+    const cheapList = document.getElementById("cheapProducts");
+
+    const cheapProducts = products.filter(p => p.price < 500);
+
+    cheapProducts.forEach(product => {
+      const li = document.createElement("li");
+      li.textContent = `${product.name} - ₹${product.price}`;
+      cheapList.appendChild(li);
+    });
+
+    // 🔹 Step 4: reduce() – calculate total price
+    const total = products.reduce((sum, p) => sum + p.price, 0);
+
+    document.getElementById("totalPrice").textContent =
+      "Total Price: ₹" + total;
+  </script>
+
+</body>
+</html>
