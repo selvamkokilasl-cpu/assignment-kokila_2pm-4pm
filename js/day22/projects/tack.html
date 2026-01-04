@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+button {
+margin: 5px;
+padding: 8px 12px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+
+<header>
+<h1 id="portfolioTitle">My HTML & CSS Portfolio</h1>
+<p class="subtitle">Welcome to my projects</p>
+</header>
+
+
+<button id="changeTitleBtn">Change Title</button>
+<button id="bgColorBtn">Change Background</button>
+<button id="addProjectBtn">Add New Project</button>
+
+
+<section id="projects">
+<div class="project">
+<h3>Project 1</h3>
+<p>Responsive website using HTML and CSS.</p>
+</div>
+</section>
+
+
+<form id="contactForm">
+<h3>Contact Me</h3>
+<input type="text" placeholder="Your Name" required>
+<button type="submit">Submit</button>
+</form>
+
+
+<script>
+// 1. Modify title dynamically using getElementById
+document.getElementById("changeTitleBtn").addEventListener("click", () => {
+document.getElementById("portfolioTitle").textContent = "My JavaScript-Enhanced Portfolio";
+});
+
+
+// 2. Change background color using querySelector
+document.getElementById("bgColorBtn").addEventListener("click", () => {
+document.body.style.backgroundColor = "#f0f8ff";
+});
+
+
+// 3. Add a new project dynamically using appendChild
+document.getElementById("addProjectBtn").addEventListener("click", () => {
+const projectSection = document.getElementById("projects");
+
+
+const projectDiv = document.createElement("div");
+projectDiv.className = "project";
+
+
+projectDiv.innerHTML = "<h3>New Project</h3><p>Dynamically added project using DOM.</p>";
+
+
+// Hover effect using event listeners
+projectDiv.addEventListener("mouseenter", () => {
+projectDiv.style.backgroundColor = "#e6f7ff";
+});
+
+
+projectDiv.addEventListener("mouseleave", () => {
+projectDiv.style.backgroundColor = "transparent";
+});
+
+
+projectSection.appendChild(projectDiv);
+});
+
+
+// 4. Handle form submission
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+e.preventDefault();
+alert("Form submitted successfully!");
+});
+</script>
+
+
+</body>
+</html>
+

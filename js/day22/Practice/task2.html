@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Paragraph Color</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+button {
+margin: 5px;
+padding: 8px 12px;
+}
+</style>
+</head>
+<body>
+    <p class="myPara">This paragraph color will change.</p>
+<button id="colorBtn">Change Paragraph Color</button>
+<script>
+    document.getElementById("colorBtn").addEventListener("click", function () {
+        document.querySelector(".myPara").style.color = "orange";
+    });
+</script>
+</body>
+</html>

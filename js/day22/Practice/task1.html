@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change heading color</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+button {
+margin: 5px;
+padding: 8px 12px;
+}
+</style>
+</head>
+<body>
+    <h1 id="mainHeading">Hello World</h1>
+<button id="changeTextBtn">Change Heading Text</button>
+<button id="changeColorBtn">Change Heading Color</button>
+<script>
+    document.getElementById("changeTextBtn").addEventListener("click", function () {
+document.getElementById("mainHeading").textContent = "Heading Changed!";
+});
+</script>
+<script>
+    document.getElementById("changeColorBtn").addEventListener("click", function () {
+document.getElementById("mainHeading").style.color = "blue";
+});
+</script>
+</body>
+</html>

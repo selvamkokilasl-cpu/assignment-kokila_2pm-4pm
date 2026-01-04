@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Operations</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+button {
+margin: 5px;
+padding: 8px 12px;
+}
+</style>
+</head>
+<body>
+    <h3>My List</h3>
+<ul id="myList">
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+<button id="addItemsBtn">Add 3 Items</button>
+<script>
+    document.getElementById("addItemsBtn").addEventListener("click", function () {
+        const ul = document.getElementById("myList");
+        for (let i = 3; i <= 5; i++) {
+            const li = document.createElement("li");
+            li.textContent = "Item " + i;
+            ul.appendChild(li);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .colorbtn{
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2> Change Background Color</h2>
+<button class="colorBtn" data-color="red">Red</button>
+<button class="colorBtn" data-color="green">Green</button>
+<button class="colorBtn" data-color="blue">Blue</button>
+<script>
+    const buttons = document.querySelectorAll('.colorBtn');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const color = button.getAttribute('data-color');
+            document.body.style.backgroundColor = color;
+        });
+    });
+    </script>
+</body>
+</html>

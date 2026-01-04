@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #htmlBox {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2> innerHTML Example</h2>
+<button id="htmlBtn">Insert HTML</button>
+<div id="htmlBox"></div>
+<script>
+    document.getElementById("htmlBtn").addEventListener("click", () => {
+document.getElementById("htmlBox").innerHTML =
+"<p>This is <b>bold</b> and <i>italic</i> text.</p>";
+});
+</script>
+</body>
+</html>
