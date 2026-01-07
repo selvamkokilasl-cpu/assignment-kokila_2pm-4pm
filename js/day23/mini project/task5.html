@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Bubbling and Capturing Demo</title>
+<style>
+  #parent {
+    padding: 30px;
+    background-color: lightcoral;
+  }
+  #child {
+    padding: 30px;
+    background-color: lightyellow;
+  }
+</style>
+</head>
+<body>
+
+<div id="parent">
+  Parent
+  <div id="child">Child</div>
+</div>
+
+<script>
+// Bubbling (default)
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Parent clicked (Bubbling)");
+});
+
+document.getElementById("child").addEventListener("click", function() {
+  console.log("Child clicked (Bubbling)");
+});
+
+// Capturing
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Parent clicked (Capturing)");
+}, true);
+
+document.getElementById("child").addEventListener("click", function() {
+  console.log("Child clicked (Capturing)");
+}, true);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Hover Color Change</title><style>
+#box {
+  width: 200px;
+  height: 100px;
+  background-color: lightgray;
+}
+</style></head><body>
+
+<div id="box" onmouseover="changeColor()" onmouseout="resetColor()">
+  Hover over me
+</div>
+
+<script>
+function changeColor() {
+  document.getElementById("box").style.backgroundColor = "lightblue";
+}
+
+function resetColor() {
+  document.getElementById("box").style.backgroundColor = "lightgray";
+}
+</script>
+
+
+
+</body></html>
