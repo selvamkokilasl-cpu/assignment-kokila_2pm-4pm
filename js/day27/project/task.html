@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fetch API Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      padding: 20px;
+    }
+    h1 { color: #111827; }
+    button {
+      padding: 10px 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #status {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    ul {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<h1>Public API Fetch Example</h1>
+
+<button id="loadBtn">Load Users</button>
+<p id="status"></p>
+<ul id="userList"></ul>
+
+<script>
+  const loadBtn = document.getElementById('loadBtn');
+  const statusText = document.getElementById('status');
+  const userList = document.getElementById('userList');
+
+  function fetchUsers() {
+    statusText.innerText = 'Loading users...'; // 🔄 Loading text
+    userList.innerHTML = '';
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network error');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Save one value in localStorage (first user name)
+        localStorage.setItem('savedUser', JSON.stringify(data[0].name));
+
+        // Display results using DOM
+        data.forEach(user => {
+          const li = document.createElement('li');
+          li.innerText = `${user.name} - ${user.email}`;
+          userList.appendChild(li);
+        });
+
+        statusText.innerText = 'Users loaded successfully';
+
+        // Retrieve saved value from localStorage
+        const savedName = JSON.parse(localStorage.getItem('savedUser'));
+        console.log('Saved user from localStorage:', savedName);
+      })
+      .catch(error => {
+        statusText.innerText = 'Failed to load data';
+        console.error('Error:', error.message);
+      });
+  }
+
+  loadBtn.addEventListener('click', fetchUsers);
+</script>
+
+</body>
+</html>
