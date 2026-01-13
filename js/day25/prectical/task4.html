@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      margin: 5px 0;
+      padding: 5px 10px;
+    }
+    p {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+    <h2> Data Fetch using async/await</h2>
+<button onclick="fetchData()">Fetch Data</button>
+<p id="fetchResult"></p>
+<script>
+    async function fetchData() {
+        function getData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Fetched Data Successfully!");
+                }, 2000);
+            });
+        }
+        const data = await getData();
+        document.getElementById("fetchResult").innerText = data;
+    }
+</script>
+</body>
+</html>

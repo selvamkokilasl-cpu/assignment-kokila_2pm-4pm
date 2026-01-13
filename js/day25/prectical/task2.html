@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      margin: 5px 0;
+      padding: 5px 10px;
+    }
+    p {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+    <h2> Delayed Message App (setTimeout)</h2>
+<button onclick="delayedMessage()">Show Message</button>
+<p id="delayMsg"></p>
+<script>
+    function delayedMessage() {
+        setTimeout(function() {
+            document.getElementById("delayMsg").innerText = "Delayed Message!";
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>

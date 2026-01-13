@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter using Closure</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        h2 {
+            color: darkblue;
+        }
+        button {
+            margin: 10px 0;
+        }
+        p {
+            color: green;
+        }
+        </style>
+</head>
+<body>
+<h2> Counter using Closure</h2>
+<button onclick="counter()">Increase Counter</button>
+<p id="countResult"></p>
+<script>
+    function createCounter() {
+  let count = 0;
+  return function () {
+    count++;
+    document.getElementById("countResult").innerText =
+      "Count: " + count;
+  };
+}
+let counter = createCounter();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      margin: 5px 0;
+      padding: 5px 10px;
+    }
+    p {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+    <h2> Fake API Call using Promise</h2>
+<button onclick="fakeAPI()">Call API</button>
+<p id="apiResult"></p>
+<script>
+    function fakeAPI() {
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("API Response: Success!");
+            }, 2000);
+        });
+        promise.then(response => {
+            document.getElementById("apiResult").innerText = response;
+        });
+    }
+</script>
+
+</body>
+</html>
