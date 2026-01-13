@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Error Handling &amp; UX Improvement</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px 0;
+      padding: 5px;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<h2>📝 Form with Error Handling</h2>
+
+<form id="userForm">
+  <input type="text" id="name" placeholder="Enter Name"><br>
+  <input type="email" id="email" placeholder="Enter Email"><br>
+  <button type="submit">Submit</button>
+</form>
+
+<p id="formMsg"></p>
+
+<hr>
+
+<h2>🌐 API Call with Error Handling</h2>
+<button onclick="fetchData()">Fetch Data</button>
+<p id="apiMsg"></p>
+
+<script>
+/* 1️⃣ Add error handling to form inputs */
+document.getElementById("userForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  try {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if (name === "") throw "Name is required";
+    if (email === "") throw "Email is required";
+    if (!email.includes("@")) throw "Invalid email format";
+
+    document.getElementById("formMsg").innerText =
+      "Form submitted successfully";
+    document.getElementById("formMsg").className = "success";
+  } catch (error) {
+    /* 3️⃣ Show user-friendly error message */
+    document.getElementById("formMsg").innerText = error;
+    document.getElementById("formMsg").className = "error";
+
+    /* 4️⃣ Log errors for debugging */
+    console.error("Form Error:", error);
+  }
+});
+
+/* 2️⃣ Handle API failures using try/catch */
+async function fetchData() {
+  try {
+    let response = await fetch("https://invalid-api-url.com/data");
+
+    if (!response.ok) {
+      throw "Server error while fetching data";
+    }
+
+    let data = await response.json();
+    document.getElementById("apiMsg").innerText = "Data loaded successfully";
+    document.getElementById("apiMsg").className = "success";
+  } catch (err) {
+    /* 3️⃣ User-friendly error message */
+    document.getElementById("apiMsg").innerText =
+      "Unable to load data. Please try again later.";
+    document.getElementById("apiMsg").className = "error";
+
+    /* 4️⃣ Log error for debugging */
+    console.error("API Error:", err);
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        h2 {
+            color: darkblue;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2> Debug Logical Error</h2>
+<button onclick="logicalError()">Run Logical Error</button>
+<p id="logicMsg"></p>
+<script>
+    function logicalError() {
+  //  Wrong logic
+  let price = 100;
+  let qty = 2;
+  let total = price + qty; // should be price * qty
+
+  //  Correct logic (for understanding)
+  // let total = price * qty;
+
+  document.getElementById("logicMsg").innerText =
+    "Wrong Output (Logical Error): " + total;
+}
+</script>
+</body>
+</html>

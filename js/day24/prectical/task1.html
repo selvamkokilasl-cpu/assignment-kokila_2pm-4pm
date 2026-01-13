@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      h2 {
+        color: darkblue;
+      }
+      input, button {
+        margin: 5px 0;
+      }
+      p {
+        color: red;
+      }
+    </style>
+  </style>
+</head>
+<body>
+    <h2> Validate Number Input</h2>
+<label for="num">Enter a number:</label>
+<input type="text" id="num" placeholder="Enter a number">
+<button onclick="checkNumber()">Check Number</button>
+<p id="numMsg"></p>
+
+<script>
+/* 1. Validate Number Input */
+function checkNumber() {
+  try {
+    let n = document.getElementById("num").value;
+    if (n === "") throw "Input is empty";
+    if (isNaN(n)) throw "Not a number";
+    document.getElementById("numMsg").innerText = "Valid number";
+  } catch (e) {
+    document.getElementById("numMsg").innerText = e;
+  }
+}
+</script>
+</body>
+</html>

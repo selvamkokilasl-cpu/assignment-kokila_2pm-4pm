@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      h2 {
+        color: darkblue;
+      }
+      input, button {
+        margin: 5px 0;
+      }
+      p {
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <h2> Calculator Error Handling</h2>
+<input type="number" id="a" placeholder="Number 1">
+<input type="number" id="b" placeholder="Number 2">
+<button onclick="divide()">Divide</button>
+<p id="calcMsg"></p>
+<script>
+    function divide() {
+  try {
+    let x = document.getElementById("a").value;
+    let y = document.getElementById("b").value;
+    if (y == 0) throw "Cannot divide by zero";
+    document.getElementById("calcMsg").innerText = x / y;
+  } catch (e) {
+    document.getElementById("calcMsg").innerText = e;
+  }
+}
+</script>
+</body>
+</html>

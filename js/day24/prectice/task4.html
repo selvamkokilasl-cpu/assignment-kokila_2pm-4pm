@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Error Handling</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      margin: 5px 0;
+    }
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <!-- 4. try / catch / finally -->
+  <h2>4. try / catch / finally</h2>
+  <button onclick="tryCatchExample()">Try Catch Example</button>
+  <p id="tryMsg"></p>
+
+
+  <script>
+    
+    // 4. try / catch / finally
+    function tryCatchExample() {
+      try {
+        console.log(z); // error
+      } catch (e) {
+        document.getElementById("tryMsg").innerText =
+          "Error handled using catch";
+      } finally {
+        console.log("Finally block executed");
+      }
+    }
+
+    
+  </script>
+
+</body>
+</html>

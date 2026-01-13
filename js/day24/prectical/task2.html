@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      h2 {
+        color: darkblue;
+      }
+      input, button {
+        margin: 5px 0;
+      }
+      p {
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <h2> Custom Error for Empty Field</h2>
+<input type="text" id="name" placeholder="Enter Name">
+<button onclick="checkName()">Submit</button>
+<p id="nameMsg"></p>
+<script>
+    function checkName() {
+  try {
+    let name = document.getElementById("name").value;
+    if (name === "") {
+      throw new Error("Name field cannot be empty");
+    }
+    document.getElementById("nameMsg").innerText = "Name submitted";
+  } catch (err) {
+    document.getElementById("nameMsg").innerText = err.message;
+  }
+}
+</script>
+</body>
+</html>

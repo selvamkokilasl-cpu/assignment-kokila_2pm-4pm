@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Error Handling</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      margin: 5px 0;
+    }
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+  <!-- 3. Runtime vs Logical Error -->
+  <h2>3. Runtime Error vs Logical Error</h2>
+  <button onclick="runtimeError()">Runtime Error</button>
+  <button onclick="logicalError()">Logical Error</button>
+  <p id="logicResult"></p>
+
+  
+  <script>
+   
+
+    // 3. Runtime Error
+    function runtimeError() {
+      console.log(y); // Runtime error
+    }
+
+    // 3. Logical Error
+    function logicalError() {
+      let sum = 10 - 5; // Logical error (should be +)
+      document.getElementById("logicResult").innerText =
+        "Logical Error Output (Wrong): " + sum;
+    }
+
+  
+  </script>
+
+</body>
+</html>

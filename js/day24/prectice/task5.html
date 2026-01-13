@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Error Handling</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      margin: 5px 0;
+    }
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- 5. throw -->
+  <h2>5. throw Statement</h2>
+  <input type="text" id="age" placeholder="Enter age">
+  <button onclick="checkAge()">Check Age</button>
+  <p id="throwMsg"></p>
+
+  <script>
+    
+
+    // 5. throw example
+    function checkAge() {
+      try {
+        let age = document.getElementById("age").value;
+        if (age === "") {
+          throw "Age field is empty";
+        }
+        if (age < 0) {
+          throw "Age cannot be negative";
+        }
+        document.getElementById("throwMsg").innerText =
+          "Valid age entered";
+      } catch (err) {
+        document.getElementById("throwMsg").innerText = err;
+      }
+    }
+  </script>
+
+</body>
+</html>
