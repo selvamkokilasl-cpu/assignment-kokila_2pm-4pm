@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Async App with Closure & API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      padding: 20px;
+    }
+    h1 { color: #111827; }
+    button {
+      padding: 10px 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #9ca3af;
+    }
+    #status {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    ul {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<h1>User Loader App</h1>
+
+<button id="loadBtn">Load Users</button>
+<p id="status"></p>
+<ul id="userList"></ul>
+
+<script>
+  /*
+    REQUIREMENTS COVERED
+    1. Closure for private state
+    2. async/await for API calls
+    3. Non-blocking UI
+    4. Error handling
+    5. Backend-ready structure
+  */
+
+  // 🔒 Service Layer using Closure
+  function createUserService() {
+    let users = []; // private state
+
+    async function fetchUsers() {
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch users');
+        }
+
+        users = await response.json();
+        return users;
+      } catch (error) {
+        console.error('API Error:', error.message);
+        throw error;
+      }
+    }
+
+    function getUsers() {
+      return users;
+    }
+
+    return { fetchUsers, getUsers };
+  }
+
+  // Create service instance
+  const userService = createUserService();
+
+  // UI Elements
+  const loadBtn = document.getElementById('loadBtn');
+  const statusText = document.getElementById('status');
+  const userList = document.getElementById('userList');
+
+  // 🖥️ UI Logic (Non-Blocking)
+  async function loadUsersUI() {
+    loadBtn.disabled = true;
+    statusText.innerText = 'Loading users...';
+    userList.innerHTML = '';
+
+    try {
+      const users = await userService.fetchUsers();
+
+      users.forEach(user => {
+        const li = document.createElement('li');
+        li.innerText = `${user.name} (${user.email})`;
+        userList.appendChild(li);
+      });
+
+      statusText.innerText = 'Users loaded successfully';
+    } catch (error) {
+      statusText.innerText = 'Error loading users';
+    } finally {
+      loadBtn.disabled = false;
+    }
+  }
+
+  loadBtn.addEventListener('click', loadUsersUI);
+</script>
+
+</body>
+</html>
