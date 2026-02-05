@@ -1,20 +1,11 @@
+import ChangeButtonText from '../day33/task4/src/assets/ChangeButtonText.jsx';
 
-import './App.css'
-import Login from './Components/Login.jsx'
-
-
-
-
-
-function App() {
-  
-
+export default function App() {
   return (
-    <>
-     
-    
-    </>
-  )};
+    <div>
+      <h1>Change Button Text Example</h1>
+      <ChangeButtonText />
+    </div>
+  );
+}
 
-    
-export default App
