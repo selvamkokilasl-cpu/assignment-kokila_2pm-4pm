@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> this is haading</h1>
+    <p> this is <strong>very important</strong> message</p>
+    <h2> read and write</h2>
+    <p>please<em> read this carefully</em>berofe youcontinue.</p>
+    <h3>main title</h3>
+    <p> text makeup language <br> uesd to create and structure</p>
+     <hr>
+     <P>this is a content <strong>bold text</strong>and<em>
+        italic text
+     </em></P>   
+</body>
+</html>
